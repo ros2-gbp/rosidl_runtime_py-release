@@ -1,0 +1,12 @@
+Source: ros-jazzy-rosidl-runtime-py
+Section: misc
+Priority: optional
+Maintainer: Shane Loretz <sloretz@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), libstd-msgs-dev <!nocheck>, libstd-srvs-dev <!nocheck>, python3-ament-copyright <!nocheck>, python3-ament-flake8 <!nocheck>, python3-ament-pep257 <!nocheck>, python3-ament-xmllint <!nocheck>, python3-pytest <!nocheck>, python3-std-msgs <!nocheck>, python3-std-srvs <!nocheck>, ros-jazzy-test-msgs <!nocheck>, ros-std-msgs <!nocheck>, ros-std-srvs <!nocheck>, ros-jazzy-ros-workspace, python3-all, python3-setuptools, dh-python
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-rosidl-runtime-py
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, python3-numpy, python3-rosidl, python3-yaml, ros-jazzy-ros-workspace
+Description: Runtime utilities for working with generated ROS interfaces in Python.
