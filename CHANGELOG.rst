@@ -2,6 +2,9 @@
 Changelog for package rosidl_runtime_py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.16.0 (2026-05-05)
+-------------------
+
 0.15.2 (2026-04-09)
 -------------------
 * Add support for rosidl::Buffer in rosidl Python path for rclpy (`#39 <https://github.com/ros2/rosidl_runtime_py/issues/39>`_)
