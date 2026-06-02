@@ -13,7 +13,6 @@
 # limitations under the License.
 
 import array
-import copy
 from functools import partial
 
 from typing import Any
@@ -21,8 +20,6 @@ from typing import Dict
 from typing import List
 
 import numpy
-
-from rosidl_buffer import Buffer as _RosidlBuffer
 
 from rosidl_parser.definition import AbstractNestedType
 from rosidl_parser.definition import NamespacedType
@@ -57,8 +54,6 @@ def set_message_fields(
     def set_message_fields_internal(
             msg: Any, values: Dict[str, str],
             timestamp_fields: List[Any]) -> List[Any]:
-        # Create a deep copy of the input dictionary to avoid modifying it for safety
-        values = copy.deepcopy(values)
         try:
             items = values.items()
         except AttributeError:
@@ -71,8 +66,6 @@ def set_message_fields(
             qualified_class_name = '{}.{}'.format(field_type.__module__, field_type.__name__)
             if field_type is array.array:
                 value = field_type(field.typecode, field_value)
-            elif field_type is _RosidlBuffer:
-                value = array.array('B', field_value)
             elif field_type is numpy.ndarray:
                 value = numpy.array(field_value, dtype=field.dtype)
             elif type(field_value) is field_type:

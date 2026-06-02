@@ -5,14 +5,13 @@ package_name = 'rosidl_runtime_py'
 
 setup(
     name=package_name,
-    version='0.16.0',
+    version='0.13.2',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/' + package_name, ['package.xml']),
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
     ],
-    package_data={'': ['py.typed']},
     zip_safe=False,
     author='Dirk Thomas',
     author_email='dthomas@osrfoundation.org',
@@ -24,6 +23,7 @@ setup(
     classifiers=[
         'Environment :: Console',
         'Intended Audience :: Developers',
+        'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
     ],
     description='Runtime utilities for working with generated ROS interfaces in Python.',
@@ -31,9 +31,5 @@ setup(
         'This package provides functions for operations such as populating ROS messages '
         'and converting messages to different representations.'),
     license='Apache License, Version 2.0',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
+    tests_require=['pytest'],
 )
